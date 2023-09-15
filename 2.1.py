@@ -14,16 +14,17 @@ my_linkedlist.append(10)
 
 def remove_duplicates_with_two_pointer(my_linkedlist):
     pointer1 = my_linkedlist.get_head()
-    pointer2 = my_linkedlist.get_head()
-    current = pointer2.next
-    while current.next is not None:
-        if pointer1.data == current.data:
-            current.next = current.next.next
+    pointer2 = my_linkedlist.get_head() 
+    pointer2 = pointer2.next
+    current = my_linkedlist.get_head()
+    while pointer2 is not None:
+        if pointer1.data == pointer2.data:
+            deleteNode(pointer1)
         
         current = current.next  
 
 
-    return my_l         
+    return my_linkedlist
 
 
 remove_duplicates_with_two_pointer(my_linkedlist)
